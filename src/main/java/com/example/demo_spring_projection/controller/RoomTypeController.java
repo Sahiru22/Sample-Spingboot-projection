@@ -1,7 +1,6 @@
 package com.example.demo_spring_projection.controller;
 
-import com.example.demo_spring_projection.dto.request.RoomTypeCreateRQ;
-import com.example.demo_spring_projection.dto.response.RoomTypeResponse;
+import com.example.demo_spring_projection.dto.RoomTypeCreateRQ;
 import com.example.demo_spring_projection.model.RoomType;
 import com.example.demo_spring_projection.service.RoomTypeService;
 import jakarta.validation.Valid;
@@ -24,14 +23,13 @@ public class RoomTypeController {
     }
 
     @GetMapping("/{id}")
-    public Optional<RoomTypeResponse> getById(@PathVariable Long id) {
+    public Optional<RoomType> getById(@PathVariable Long id) {
         return roomTypeService.getById(id);
     }
 
     @GetMapping()
-    public List<RoomTypeResponse> list() {
+    public List<RoomType> list() {
         return roomTypeService.getAll();
     }
 
-    
 }

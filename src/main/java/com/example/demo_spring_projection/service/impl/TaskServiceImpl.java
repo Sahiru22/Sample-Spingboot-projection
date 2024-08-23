@@ -1,6 +1,6 @@
 package com.example.demo_spring_projection.service.impl;
 
-import com.example.demo_spring_projection.dto.request.TaskCreateRQ;
+import com.example.demo_spring_projection.dto.TaskCreateRQ;
 import com.example.demo_spring_projection.model.Task;
 import com.example.demo_spring_projection.repository.TaskRepository;
 import com.example.demo_spring_projection.service.TaskService;

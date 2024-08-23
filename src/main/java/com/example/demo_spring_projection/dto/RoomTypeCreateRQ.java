@@ -1,4 +1,4 @@
-package com.example.demo_spring_projection.dto.request;
+package com.example.demo_spring_projection.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
