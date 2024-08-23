@@ -30,4 +30,8 @@ public class Task {
 
     @Size(max = 60)
     private String doneBy;
+
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "room_id")
+    private Room room;
 }
