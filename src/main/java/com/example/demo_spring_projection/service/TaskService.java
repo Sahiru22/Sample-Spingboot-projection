@@ -1,6 +1,7 @@
 package com.example.demo_spring_projection.service;
 
 import com.example.demo_spring_projection.dto.TaskCreateRQ;
+import com.example.demo_spring_projection.dto.TaskSummaryDTO;
 import com.example.demo_spring_projection.model.Task;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface TaskService {
     Optional<Task> getById(Long id);
 
     List<Task> getAll();
+
+    List<TaskSummaryDTO> getAllTasks();
 }

@@ -1,6 +1,7 @@
 package com.example.demo_spring_projection.controller;
 
 import com.example.demo_spring_projection.dto.TaskCreateRQ;
+import com.example.demo_spring_projection.dto.TaskSummaryDTO;
 import com.example.demo_spring_projection.model.Room;
 import com.example.demo_spring_projection.model.Task;
 import com.example.demo_spring_projection.service.TaskService;
@@ -21,6 +22,11 @@ public class TaskController {
     @PostMapping("")
     public Task create(@Valid @RequestBody TaskCreateRQ form) {
         return taskService.create(form);
+    }
+
+    @GetMapping("/all-tasks")
+    public List<TaskSummaryDTO> getActiveTasks() {
+        return taskService.getAllTasks();
     }
 
     @GetMapping("/{id}")
