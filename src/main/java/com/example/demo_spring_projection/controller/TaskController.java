@@ -1,8 +1,8 @@
 package com.example.demo_spring_projection.controller;
 
 import com.example.demo_spring_projection.dto.TaskCreateRQ;
+import com.example.demo_spring_projection.dto.TaskProjectionDTO;
 import com.example.demo_spring_projection.dto.TaskSummaryDTO;
-import com.example.demo_spring_projection.model.Room;
 import com.example.demo_spring_projection.model.Task;
 import com.example.demo_spring_projection.service.TaskService;
 import jakarta.validation.Valid;
@@ -24,9 +24,14 @@ public class TaskController {
         return taskService.create(form);
     }
 
-    @GetMapping("/all-tasks")
-    public List<TaskSummaryDTO> getActiveTasks() {
+    @GetMapping("/Interface-projection")
+    public List<TaskSummaryDTO> getAllTasks() {
         return taskService.getAllTasks();
+    }
+
+    @GetMapping("/room/{roomId}")
+    public List<TaskProjectionDTO> getTasksByRoom(@PathVariable("roomId") Long roomId) {
+        return taskService.getTasksByRoom(roomId);
     }
 
     @GetMapping("/{id}")

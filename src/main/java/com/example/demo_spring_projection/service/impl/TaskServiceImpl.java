@@ -1,7 +1,9 @@
 package com.example.demo_spring_projection.service.impl;
 
 import com.example.demo_spring_projection.dto.TaskCreateRQ;
+import com.example.demo_spring_projection.dto.TaskProjectionDTO;
 import com.example.demo_spring_projection.dto.TaskSummaryDTO;
+import com.example.demo_spring_projection.model.Room;
 import com.example.demo_spring_projection.model.Task;
 import com.example.demo_spring_projection.repository.RoomRepository;
 import com.example.demo_spring_projection.repository.TaskRepository;
@@ -41,5 +43,10 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public List<TaskSummaryDTO> getAllTasks() {
         return taskRepository.findAllTask();
+    }
+
+    public List<TaskProjectionDTO> getTasksByRoom(Long roomId) {
+        Optional<Room> room = roomRepository.findById(roomId) ;
+        return taskRepository.findTasksByRoom(room);
     }
 }

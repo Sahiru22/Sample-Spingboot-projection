@@ -1,7 +1,5 @@
 package com.example.demo_spring_projection.dto;
 
-import com.example.demo_spring_projection.model.Room;
-
 import java.time.LocalDate;
 
 public interface TaskSummaryDTO {
