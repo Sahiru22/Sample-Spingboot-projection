@@ -1,5 +1,6 @@
 package com.example.demo_spring_projection.controller;
 
+import com.example.demo_spring_projection.dto.DynamicProjectionDTO;
 import com.example.demo_spring_projection.dto.TaskCreateRQ;
 import com.example.demo_spring_projection.dto.TaskProjectionDTO;
 import com.example.demo_spring_projection.dto.TaskSummaryDTO;
@@ -32,6 +33,11 @@ public class TaskController {
     @GetMapping("/room/{roomId}")
     public List<TaskProjectionDTO> getTasksByRoom(@PathVariable("roomId") Long roomId) {
         return taskService.getTasksByRoom(roomId);
+    }
+
+    @GetMapping("/assigned/{name}/summary")
+    public List<DynamicProjectionDTO> getTaskSummaries(@PathVariable String name) {
+        return taskService.getTasksByAssigned(name, DynamicProjectionDTO.class);
     }
 
     @GetMapping("/{id}")
