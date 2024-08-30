@@ -21,4 +21,6 @@ public interface TaskService {
     List<TaskProjectionDTO> getTasksByRoom(Long roomId);
 
     List<DynamicProjectionDTO> getTasksByAssigned(String name, Class<DynamicProjectionDTO> dynamicProjectionDTOClass);
+
+    List<TaskSummaryDTO> getAllTask();
 }

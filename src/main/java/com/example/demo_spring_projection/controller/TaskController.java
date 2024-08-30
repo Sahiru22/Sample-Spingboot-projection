@@ -25,6 +25,7 @@ public class TaskController {
         return taskService.create(form);
     }
 
+    //interface based projection with quarry method
     @GetMapping("/Interface-projection")
     public List<TaskSummaryDTO> getAllTasks() {
         return taskService.getAllTasks();
@@ -45,8 +46,14 @@ public class TaskController {
         return taskService.getById(id);
     }
 
-    @GetMapping()
+    @GetMapping("")
     public List<Task> list() {
         return taskService.getAll();
+    }
+
+    //interface based projection without quarry method
+    @GetMapping("all")
+    public List<TaskSummaryDTO> getAll() {
+        return taskService.getAllTask();
     }
 }

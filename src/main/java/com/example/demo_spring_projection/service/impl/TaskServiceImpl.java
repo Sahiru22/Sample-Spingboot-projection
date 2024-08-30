@@ -41,6 +41,7 @@ public class TaskServiceImpl implements TaskService {
         return taskRepository.findAll();
     }
 
+    //interface based projection with quarry method
     @Override
     public List<TaskSummaryDTO> getAllTasks() {
         return taskRepository.findAllTask();
@@ -54,5 +55,11 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public List<DynamicProjectionDTO> getTasksByAssigned(String name, Class<DynamicProjectionDTO> dynamicProjectionDTOClass) {
         return taskRepository.findByAssigned(name, dynamicProjectionDTOClass);
+    }
+
+    //interface based projection without quarry method
+    @Override
+    public List<TaskSummaryDTO> getAllTask() {
+        return taskRepository.findAllProjectedBy();
     }
 }
